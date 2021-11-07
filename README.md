@@ -6,4 +6,3 @@ Advance Programming Techniques [GitHub Page](https://github.com/fatihozkan03/JS.
 
 ## EXAMPLES 
 [CW6](https://fatihozkan03.github.io/JS/CW6.html)
-[CW8](https://fatihozkan03.github.io/JS/displayBlob.html)
