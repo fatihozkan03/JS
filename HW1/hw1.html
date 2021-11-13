@@ -1,0 +1,89 @@
+<html>
+    <body>
+        <pre>
+            <h1>Division Table</h1>
+        </pre>
+        a = <input type=number id=a value=0 onChange="calculate()">
+
+        b = <input type=number id=b value=0 onChange="calculate()">
+        <br><br>
+        Division: <output style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" id="div"></output> 
+        <br><br>
+
+        <table id="tablo" border="10" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" cellpadding="10"></table>
+        
+        <br><br>
+        <h1>Sample Code</h1>
+        
+
+        
+        <pre>function divisionTable(){
+            const L = [1,2,3,4,5,6,7,8];
+            const M = [1,2,3,4,5,6,7,8];
+            let row = "<th>"+"x"+"</th>";
+            
+            for(let s = 0; s< L.length;s++)
+            {
+                row += "<th>"+L[s]+"</th>";
+            }
+            
+            let text = "<tr>"+row+"</tr>";
+            for(let r=0;r<M.length;r++){
+    
+                row = "<th>"+M[r]+"</th>";
+    
+                for(let t=0;t<L.length;t++){
+                    row += "<td>"+"  "+((L[t]) / (M[r])).toFixed(3)+" "+"</td>";
+                }
+    
+                text += "<tr>"+row+"</tr>";
+            }
+            
+            tablo.innerHTML = text;
+            
+        }
+        </pre>
+        
+
+
+    </body>
+</html>
+
+
+<script>
+    
+    divisionTable();
+    function calculate(){
+        a=document.getElementById("a").value;
+        b=document.getElementById("b").value;
+        
+        let div=(a/b).toFixed(3);
+
+        document.getElementById("div").innerHTML = div;
+    }
+    function divisionTable(){
+        const L = [1,2,3,4,5,6,7,8];
+        const M = [1,2,3,4,5,6,7,8];
+        let row = "<th>"+"x"+"</th>";
+        
+        for(let s = 0; s< L.length;s++)
+        {
+            row += "<th>"+L[s]+"</th>";
+        }
+        
+        let text = "<tr>"+row+"</tr>";
+        for(let r=0;r<M.length;r++){
+
+            row = "<th>"+M[r]+"</th>";
+
+            for(let t=0;t<L.length;t++){
+                row += "<td>"+"  "+((L[t]) / (M[r])).toFixed(3)+" "+"</td>";
+            }
+
+            text += "<tr>"+row+"</tr>";
+        }
+        
+        tablo.innerHTML = text;
+        
+    }
+</script>
