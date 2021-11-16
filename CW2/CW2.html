@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>CW 2 </title>
+
+</head>
+
+<body>
+
+
+
+    <hr>
+    <b>Sample code</b>
+    <pre>
+        function range(x, y, z = 1) {
+            let buyuk; kucuk;
+            if (x > y) {
+                buyuk = x; kucuk = y;
+
+            } else {
+                buyuk = y; kucuk = x;
+
+            }
+            if (z < 0) {
+                z = z * (-1);
+
+            }
+            array = [];
+            for (let i = kucuk; i <= buyuk; i + z) {
+                array.push(i);
+            }
+            return array;
+        }
+        function sum(x) {
+            let sum = O;
+            for (let i = 0; i < x.length; i++) {
+                sum = sum + x[i];
+
+            }
+            return sum;
+        }
+    </pre>
+    <hr>
+   
+
+    <script>
+        "use strict";
+        // JavaScript comment
+        function range(x, y, z = 1) {
+            let buyuk; kucuk;
+            if (x > y) {
+                buyuk = x; kucuk = y;
+
+            } else {
+                buyuk = y; kucuk = x;
+
+            }
+            if (z < 0) {
+                z = z * (-1);
+
+            }
+            array = [];
+            for (let i = kucuk; i <= buyuk; i + z) {
+                array.push(i);
+            }
+            return array;
+        }
+        function sum(x) {
+            let sum = O;
+            for (let i = 0; i < x.length; i++) {
+                sum = sum + x[i];
+
+            }
+            return sum;
+        }
+
+        title.innerText = document.title
+        sample.innerText = range + '\n' + sum
+
+    </script>
+
+</body>
+
+</html>
