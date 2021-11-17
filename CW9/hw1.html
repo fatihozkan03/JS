@@ -1,0 +1,128 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Division Table</title>
+
+    <style>
+        body {
+            max-width: 470px;
+        }
+
+        pre {
+            overflow-x: auto;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        #out {
+            font-size: larger;
+            line-height: 1.4;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <pre>
+            <h1>Division Table</h1>
+        </pre>
+    a = <input type=number id=a value=0 onChange="calculate()">
+
+    b = <input type=number id=b value=0 onChange="calculate()">
+
+    <br><br>
+    Division: <output style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:red;"
+        id="div"></output>
+    <br><br>
+
+    <table id="tablo" border="10"
+        style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:royalblue;font-size: smaller;"
+        cellpadding="10"></table>
+    <hr>
+    <b>Orginal Table</b>
+    <p>
+        <img src="DivisionTable.png">
+
+        <b>Ref:</b> <a href="https://i.pinimg.com/originals/8f/66/eb/8f66eb364349dc5ca193c69d506d9ebf.jpg"
+            target="NewTab">Division Table</a>
+    </p>
+    <br><br>
+    <hr>
+    <h1>Sample Code</h1>
+
+
+
+    <pre>function divisionTable(){
+            const L = [1,2,3,4,5,6,7,8];
+            const M = [1,2,3,4,5,6,7,8];
+            let row = "<th>"+"/"+"</th>";
+            
+            for(let s = 0; s< L.length;s++)
+            {
+                row += "<th>"+L[s]+"</th>";
+            }
+            
+            let text = "<tr>"+row+"</tr>";
+            for(let r=0;r<M.length;r++){
+    
+                row = "<th>"+M[r]+"</th>";
+    
+                for(let t=0;t<L.length;t++){
+                    row += "<td>"+"  "+((L[t]) / (M[r])).toFixed(3)+" "+"</td>";
+                }
+    
+                text += "<tr>"+row+"</tr>";
+            }
+            
+            tablo.innerHTML = text;
+            
+        }
+        </pre>
+
+
+
+</body>
+
+</html>
+
+
+<script>
+
+    divisionTable();
+    function calculate() {
+        a = document.getElementById("a").value;
+        b = document.getElementById("b").value;
+
+        let div = (a / b).toFixed(3);
+
+        document.getElementById("div").innerHTML = div;
+    }
+    function divisionTable() {
+        const L = [1, 2, 3, 4, 5, 6, 7, 8];
+        const M = [1, 2, 3, 4, 5, 6, 7, 8];
+        let row = "<th>" + "/" + "</th>";
+
+        for (let s = 0; s < L.length; s++) {
+            row += "<th>" + L[s] + "</th>";
+        }
+
+        let text = "<tr>" + row + "</tr>";
+        for (let r = 0; r < M.length; r++) {
+
+            row = "<th>" + M[r] + "</th>";
+
+            for (let t = 0; t < L.length; t++) {
+                row += "<td>" + "  " + ((L[t]) / (M[r])).toFixed(3) + " " + "</td>";
+            }
+
+            text += "<tr>" + row + "</tr>";
+        }
+
+        tablo.innerHTML = text;
+
+    }
+</script>
