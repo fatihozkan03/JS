@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" href="https://blm-fsmvu.github.io/305/images/icon192.png">
+  <title>Event listeners</title>
+
+  <style>
+    /* CSS comment */
+    body {
+      max-width: 440px;
+    }
+
+    #url {
+      width: 190px;
+    }
+
+    span,
+    #url {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HTML comment: Modify all items marked xxx -->
+
+  <h2>Battery Status</h2>
+
+  <p title="Battery level (integer)">
+    Battery level: <span id=level>??</span>
+  </p>
+  <p title="Cahrge Status">
+    Charge Status: <span id=charge></span>
+  </p>
+  <p title="Charge Level Changes">
+    Charge Level Changes: <span id=levelchange></span>
+  </p>
+  <h2>Online Status</h2>
+  <p><span id=online></span></p>
+  <h2>Keyboard Bind</h2>
+  <p>
+    Key : <span id=keyboard></span>
+  </p>
+
+  <hr />
+  <b>Sample code</b>
+  <pre id=sample>This text is not shown. Why?</pre>
+
+  <hr />
+
+  <script>
+    "use strict";
+    function init() {
+      //complete the code below
+      navigator.getBattery().then(b =>
+        lev.innerText = 100 * b.level + '%'
+      )
+      navigator.getBattery().then(b =>
+        b.onchargingchange = () => charge.innerText = (b.charging ? "Charging" : "Discharging")
+      )
+      navigator.getBattery().then(b =>
+        b.onlevelchange = () => levelChange.innerText = (b.level * 100 + '%')
+      )
+      online.innerText = navigator.onLine ? "connected-online" : "disconnected-offline";
+      window.addEventListener('online', event => {
+        online.innerText = "connected-online";
+      }, false);
+
+      window.addEventListener('offline', event => {
+        online.innerText = "disconnected-offline";
+      }, false);
+
+      window.addEventListener("keydown", event => {
+        keyboard.innerText = event.key
+      });
+
+      window.addEventListener("keyup", event => {
+        keyboard.innerText = event.key
+      });
+      check()
+
+    }
+    function check() {
+      //complete the code below
+      fetch(url.value).then(r =>
+        resp.innerText = r.ok ? 'OK' : '404'
+      ).catch(e =>
+        resp.innerText = e
+      )
+    }
+    
+    sample.innerText = init + '\n' + check;
+    init();
+  </script>
+
+</body>
+
+</html>
