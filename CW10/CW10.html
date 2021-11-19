@@ -56,7 +56,7 @@
     function init() {
       //complete the code below
       navigator.getBattery().then(b =>
-        lev.innerText = 100 * b.level + '%'
+        level.innerText = 100 * b.level + '%'
       )
       navigator.getBattery().then(b =>
         b.onchargingchange = () => charge.innerText = (b.charging ? "Charging" : "Discharging")
@@ -80,19 +80,12 @@
       window.addEventListener("keyup", event => {
         keyboard.innerText = event.key
       });
-      check()
+      
 
     }
-    function check() {
-      //complete the code below
-      fetch(url.value).then(r =>
-        resp.innerText = r.ok ? 'OK' : '404'
-      ).catch(e =>
-        resp.innerText = e
-      )
-    }
+
     
-    sample.innerText = init + '\n' + check;
+    sample.innerText = init;
     init();
   </script>
 
