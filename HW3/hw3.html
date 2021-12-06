@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Animation by Fatih Özkan</title>
+
+  <style>
+    body {
+      max-width: 500px;
+    }
+
+    #sample {
+      overflow-x: auto;
+    }
+
+    button {
+      user-select: none;
+      cursor: pointer;
+    }
+
+    #box {
+      font-size: 180px;
+      background: white;
+      width: 350px;
+      height: 240px;
+      position: relative;
+
+
+
+    }
+
+    #iii,
+    #dot {
+      user-select: none;
+      position: fixed;
+
+    }
+
+    #iii {
+      color: blue;
+    }
+
+    #dot {
+      background: rgba(0, 0, 0, 0);
+      color: rgb(6, 247, 255);
+      position: absolute;
+      right: 115px;
+      top: -95px;
+    }
+
+    #out {
+      height: 50px;
+      font-size: 0px;
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2 id=title></h2>
+
+  <div id=box onClick="box.animate(t1, 5000)">
+    <span id=iii>fatıh</span>
+    <span id=dot>.</span>
+  </div>
+
+  <p id=but>
+    <button onClick="dot .animate(t2, 7000)">rotate dot</button>
+    <button onClick="box .animate(t3, 7500)">box background</button>
+    <button onClick="iii .animate(t5, 7500)">change color</button>
+    <button onClick="out .animate(t4, 7500)">mean?</button>
+  </p>
+
+  <p id=out>"Fatih" meaning conqueror, victor.</p>
+
+  <hr />
+  <b>Sample code</b>
+  <pre id=sample></pre>
+
+  <hr />
+  <p>Ref: <a href="https://webkit.org/blog/8343/web-animations-in-webkit/" target="NewTab">Web Animations in WebKit</a>
+  </p>
+
+  <script>
+    "use strict";
+    title.innerText = document.title;
+    let
+      r0 = "rotate(0)", x0 = "translateX(90)",
+      t1 = {
+        transform: [r0, "rotate(1800deg)", "translateX(2900px)", "translateX(-2900px)", r0, "rotate(-1800deg)", r0],
+
+      },
+      t2 = {
+        transform: [r0, "rotate(360deg)", "translateX(290px)", "translateX(-290px)", r0, "rotate(-360deg)", r0],
+        color: ["cyan", "blue", "red", "white", "red", "blue", "cyan"],
+        fontSize: ["100%", "200%", "100%", "50%", "100%"]
+      },
+      t3 = { background: ["white", "red", "cyan", "magenta", "red", "grey", "white"] },
+      t4 = { fontSize: ["0px", "7px", "14px", "21px", "28px", "28px", "21px", "14px", "7px", "0px"], },
+      t5 = { color: ["blue", "cyan", "green", "white", "green", "cyan", "blue"] },
+      a = [t1, t2, t3, t4, t5];
+    sample.innerText = but.innerHTML
+      + '\nt1 = ' + JSON.stringify(t1)
+      + '\nt2 = ' + JSON.stringify(t2)
+      + '\nt3 = ' + JSON.stringify(t3)
+      + '\nt3 = ' + JSON.stringify(t4)
+      + '\nt5 = ' + JSON.stringify(t5)
+  </script>
+
+
+</body>
+
+</html>
