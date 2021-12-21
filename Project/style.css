@@ -1,0 +1,39 @@
+@import url(//db.onlinewebfonts.com/c/b2e75c336df191233b3096682c9ee6be?family=PixelarRegularW01-Regular);
+
+*{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "PixelarRegularW01-Regular";
+}
+body{
+    margin: 0;
+    overflow: hidden;
+}
+#game{
+    width: 100vw; /*%100 width*/
+    height: 100vh;/*%100 height*/
+    overflow: hidden;
+    background: url("/img/world.jpg");
+    background-position: center left;
+}
+#block{
+  width: 45px;
+  height: 100vh;
+  background: url("/img/blockbg.jpg");
+  background-position:center;
+  background-size: contain;
+  position: relative;
+}
+#hole{
+  width: 45px;
+  height: 193px;
+  background: url("/img/holebg.jpg");
+  background-size: contain;
+  position: relative;
+  top: -500px;
+  background-repeat: no-repeat;
+}
+#block, #hole{
+  left:40vw;
+}
