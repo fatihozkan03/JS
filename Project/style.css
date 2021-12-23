@@ -4,11 +4,64 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
+
   font-family: "PixelarRegularW01-Regular";
+  color: white;
+  font-size: 30px;
+  font-weight: normal;
 }
 body{
     margin: 0;
     overflow: hidden;
+}
+#score{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: white;
+  font-size: 30px;
+  font-weight: normal;
+}
+#gameoverscreen{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#gameoverscreen .backdrop{
+  background: black;
+  opacity: 0.5;
+  width: 100vw;
+  height: 100vh;
+}
+#gameoverscreen .title, 
+#gameoverscreen .score,
+#gameoverscreen button {
+    position: absolute;
+    z-index: 1;
+    left: calc(50% - 102px);
+    top: 40%;
+    width: 205px;
+    text-align: center;
+    color: rgb(255, 255, 74);
+    font-family: 'PixelarRegularW01-Regular';
+    font-weight: normal;
+}
+#gameoverscreen .title {
+  margin-top: -65px;
+  font-size: 55px;
+}
+#gameoverscreen .score {
+  font-size: 30px;
+}
+#gameoverscreen button {
+  margin-top: 50px;
+  font-size: 24px;
+  color: black;
+  padding: 5px 25px;
+  cursor: pointer;
+  border: 0;
 }
 #game{
     width: 100vw; /*%100 width*/
@@ -28,12 +81,24 @@ body{
 #hole{
   width: 45px;
   height: 193px;
-  background: url("/img/holebg.jpg");
-  background-size: contain;
   position: relative;
   top: -500px;
+  background: url("/img/holebg.jpg");
+  background-size: contain;
   background-repeat: no-repeat;
 }
 #block, #hole{
   left:40vw;
+}
+#character {
+  width: 40px;
+  height: 30px;
+  position: absolute;
+  background: url("/img/bird.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 20vh;
+  left: 20vw;
+
+
 }
