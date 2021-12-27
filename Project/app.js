@@ -140,7 +140,7 @@ function handleCharacterCollisions() {
             numOfHoles = 0
 
             showStar()
-            setTimeout(_ => hideStar(), 1500)
+            setTimeout(_ => hideStar(), 2500)
         }
     }
 }
