@@ -56,7 +56,7 @@ function handleStarDetection() {
     if ( star.style.display === 'none' ) return
 
     if ( detectColision( character, star ) ) {
-        (new Audio('/Project/sounds/star.wav')).play()
+        (new Audio('/JS/Project/sounds/star.wav')).play()
         scoreTotal += 150
         hideStar()
         changeScoreUi()
@@ -126,7 +126,7 @@ function handleCharacterCollisions() {
         
         soundCount++
         if ( soundCount > 35 ) {
-            (new Audio('/Project/sounds/hole.wav')).play()
+            (new Audio('/JS/Project/sounds/hole.wav')).play()
             soundCount = 0
         }
         
@@ -165,7 +165,7 @@ function characterJump() {
         changeGameState({ diff: -3, direction: 'up' })
 
         if ( jumpCount > 20 ) {
-            (new Audio('/Project/sounds/fly.wav')).play()
+            (new Audio('/JS/Project/sounds/fly.wav')).play()
         
             clearInterval( jumpInterval )
             isJumping = false
@@ -211,7 +211,7 @@ function setEventListeners() {
 }
 
 function gameOver() {
-    (new Audio('/Project/sounds/gameover.wav')).play()
+    (new Audio('/JS/Project/sounds/gameover.wav')).play()
     gameStopped = true
     showGameoverscreen()
     stopBlockAnimation()
