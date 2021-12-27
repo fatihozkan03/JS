@@ -1,39 +1,36 @@
 @import url(//db.onlinewebfonts.com/c/b2e75c336df191233b3096682c9ee6be?family=PixelarRegularW01-Regular);
 
-*{
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
 
-  font-family: "PixelarRegularW01-Regular";
-  color: white;
-  font-size: 30px;
-  font-weight: normal;
-}
-body{
+* {
+    padding: 0;
     margin: 0;
     overflow: hidden;
 }
-#score{
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  color: white;
-  font-size: 30px;
-  font-weight: normal;
+body {
+    overflow: hidden;
+    margin: 0;
 }
-#gameoverscreen{
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
+#score {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-family: "PixelarRegularW01-Regular";
+    font-size: 30px;
+    font-weight: normal;
 }
-#gameoverscreen .backdrop{
-  background: black;
-  opacity: 0.5;
-  width: 100vw;
-  height: 100vh;
+#gameoverscreen {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#gameoverscreen .backdrop {
+    background: black;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
 }
 #gameoverscreen .title, 
 #gameoverscreen .score,
@@ -49,62 +46,105 @@ body{
     font-weight: normal;
 }
 #gameoverscreen .title {
-  margin-top: -65px;
-  font-size: 55px;
+    margin-top: -65px;
+    font-size: 55px;
 }
 #gameoverscreen .score {
-  font-size: 30px;
+    font-size: 30px;
 }
 #gameoverscreen button {
-  margin-top: 50px;
-  font-size: 24px;
-  color: black;
-  padding: 5px 25px;
-  cursor: pointer;
-  border: 0;
+    margin-top: 50px;
+    font-size: 24px;
+    color: black;
+    padding: 5px 25px;
+    cursor: pointer;
+    border: 0;
 }
 #star {
-  background: url(/img/star.png);
-  width: 35px;
-  height: 35px;
-  position: absolute;
-  background-position: center;
-  background-size: contain;
+    background: url(/img/star.png);
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background-position: center;
+    background-size: contain;
 }
-#game{
-    width: 100vw; /*%100 width*/
-    height: 100vh;/*%100 height*/
+
+#game {
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
-    background: url("/img/world.jpg");
+    background: url('/img/world.jpg');
     background-position: center left;
+    
 }
-#block{
-  width: 45px;
-  height: 100vh;
-  background: url("/img/blockbg.jpg");
-  background-position:center;
-  background-size: contain;
-  position: relative;
+#block {
+    width: 45px;
+    height: 100vh;
+    background: url('/img/blockbg.jpg');
+    background-position: center;
+    background-size: contain;
+    position: relative;
 }
-#hole{
-  width: 45px;
-  height: 193px;
-  position: relative;
-  top: -500px;
-  background: url("/img/holebg.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-#block, #hole{
-  left:40vw;
+#hole {
+    width: 46px;
+    height: 193px;
+    background: url('/img/holebg.jpg');
+    background-size: contain;
+    position: relative;
+    top: -500px;
+    background-repeat: no-repeat;
 }
 #character {
-  width: 40px;
-  height: 30px;
-  position: absolute;
-  background: url("/img/bird.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  top: 20vh;
-  left: 20vw;
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    border-radius: 50%;
+    background: url('/img/bird.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.go-up {
+    animation: rotateUp 0.2s;
+    animation-fill-mode:forwards;
+}
+.go-down {
+    animation: rotateDown 0.2s;
+    animation-fill-mode:forwards;
+}
+
+@keyframes blockAnimation {
+    0% { left: 100vw; }
+    100% { left: -50px; }
+}
+@keyframes backgroundAnimation {
+    0% { background-position-x: 0 }
+    100% { background-position-x: 100vw }
+}
+@keyframes starAnimation1 {
+    0% { left: 50vw; }
+    100% { left: -50px; }
+}
+@keyframes starAnimation2 {
+    0% { left: 60vw; }
+    100% { left: -50px; }
+}
+@keyframes starAnimation3 {
+    0% { left: 70vw; }
+    100% { left: -50px; }
+}
+@keyframes starAnimation4 {
+    0% { left: 80vw; }
+    100% { left: -50px; }
+}
+@keyframes starAnimation5 {
+    0% { left: 90vw; }
+    100% { left: -50px; }
+}
+@keyframes rotateUp {
+    0% { transform: rotate( 0deg ) }
+    100% { transform: rotate( -35deg ) }
+}
+@keyframes rotateDown {
+    0% { transform: rotate( 0deg ) }
+    100% { transform: rotate( 35deg ) }
 }
