@@ -94,15 +94,7 @@ function handleGameSpeed() {
             resetAllAnimations()
         }, timeoutLength )
     }
-    if (doRest) {
-
-        hole.addEventListener('animationiteration',()=>{
-            resetAllAnimations()
-        })
-        block.addEventListener('animationiteration', () => {
-           resetAllAnimations()
-        })
-}
+    
 }
 
 function handleCharacterAnimation( direction ) {
